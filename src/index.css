@@ -4,10 +4,10 @@
   /* Основные цвета проекта */
   --color-background-primary: #f5f7fa;
   --color-background-secondary: #ffffff;
-  --color-surface-primary: #ffffff;
+  --color-accent-primary: #1a6cff;
   --color-surface-secondary: #f8fafc;
-  --color-text-primary: #1e293b;
-  --color-text-secondary: #64748b;
+  --color-text-primary: #000000;
+  --color-text-secondary: #ffffff;
   
   /* Системные цвета */
   --color-success: #10b981;
