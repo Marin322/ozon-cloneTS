@@ -1,0 +1,122 @@
+[
+  {
+    "id": "product_001",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-s/wc300/8321661640.jpg",
+    "priceWithoutDiscount": 6852,
+    "priceWithDiscount": 2441,
+    "desc": "Кроссовки T.TACCARDI мужские зимние с мехом",
+    "rating": 4.9,
+    "countReview": 1680,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_002",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-k/wc300/7096082888.jpg",
+    "priceWithoutDiscount": 1567,
+    "priceWithDiscount": 341,
+    "desc": "Обложка на паспорт и документы черная",
+    "rating": 4.9,
+    "countReview": 16890,
+    "hasDiscount": false
+  },
+  {
+    "id": "product_003",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-v/wc300/8398488811.jpg",
+    "priceWithoutDiscount": 750,
+    "priceWithDiscount": 145,
+    "desc": "Чертилка по металлу/Разметочный карандаш",
+    "rating": 4.9,
+    "countReview": 3330,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_004",
+    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa",
+    "priceWithoutDiscount": 12999,
+    "priceWithDiscount": 8999,
+    "desc": "Кроссовки Nike Air Max 270",
+    "rating": 4.7,
+    "countReview": 2341,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_005",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    "priceWithoutDiscount": 8999,
+    "priceWithDiscount": 8999,
+    "desc": "Рюкзак спортивный Adidas",
+    "rating": 4.5,
+    "countReview": 567,
+    "hasDiscount": false
+  },
+  {
+    "id": "product_006",
+    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e",
+    "priceWithoutDiscount": 15999,
+    "priceWithDiscount": 10999,
+    "desc": "Кофемашина De'Longhi Magnifica",
+    "rating": 4.8,
+    "countReview": 1789,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_007",
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
+    "priceWithoutDiscount": 1999,
+    "priceWithDiscount": 1499,
+    "desc": "Фотоаппарат моментальной печати Instax Mini",
+    "rating": 4.4,
+    "countReview": 456,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_008",
+    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
+    "priceWithoutDiscount": 2499,
+    "priceWithDiscount": 2499,
+    "desc": "Очки солнцезащитные Ray-Ban",
+    "rating": 4.6,
+    "countReview": 1203,
+    "hasDiscount": false
+  },
+  {
+    "id": "product_009",
+    "image": "https://images.unsplash.com/photo-1543512214-318c7553f230",
+    "priceWithoutDiscount": 14999,
+    "priceWithDiscount": 11999,
+    "desc": "Монитор игровой 27 дюймов 144Hz",
+    "rating": 4.7,
+    "countReview": 987,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_010",
+    "image": "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f",
+    "priceWithoutDiscount": 899,
+    "priceWithDiscount": 899,
+    "desc": "Книга 'Атлант расправил плечи'",
+    "rating": 4.9,
+    "countReview": 3456,
+    "hasDiscount": false
+  },
+  {
+    "id": "product_011",
+    "image": "https://images.unsplash.com/photo-1600003263720-95b45a4035d5",
+    "priceWithoutDiscount": 7999,
+    "priceWithDiscount": 5999,
+    "desc": "Клавиатура механическая Razer Huntsman",
+    "rating": 4.8,
+    "countReview": 765,
+    "hasDiscount": true
+  },
+  {
+    "id": "product_012",
+    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86",
+    "priceWithoutDiscount": 3499,
+    "priceWithDiscount": 3499,
+    "desc": "Мышь беспроводная Logitech MX Master 3",
+    "rating": 4.9,
+    "countReview": 2109,
+    "hasDiscount": false
+  }
+]

@@ -1,12 +1,12 @@
-interface SearchFieldProps {
-  searchTag?: string;
-}
-
-function SearchField({ searchTag }: SearchFieldProps) {
+// interface SearchFieldProps {
+//   searchTag?: string;
+// }
+//({ searchTag }: SearchFieldProps)
+function SearchField() {
   return (
-    <div className="w-175 h-full bg-accent-primary rounded-xl p-0.5 pr-6 items-center grid grid-cols-[auto_24px] gap-6">
+    <div className="w-195 h-full bg-accent-primary rounded-xl p-0.5 pr-6 items-center grid grid-cols-[auto_24px] gap-6">
       <div className="w-full h-full bg-background-secondary rounded-[10px] flex">
-        <button className="bg-background-primary p-2 ml-1 rounded-l-[10px] hover:cursor-pointer hover:text-accent-primary">Везде</button>
+        <button className="bg-background-primary p-1 ml-1 mt-1 mb-1 rounded-[10px] hover:cursor-pointer hover:text-accent-primary text-gray-500">Везде</button>
         <input className="w-full h-full pl-2" placeholder="Искать на Ozon"/>
       </div>
       <svg
