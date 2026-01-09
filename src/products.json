@@ -1,6 +1,6 @@
 [
   {
-    "id": "product_001",
+    "id": "2146403370",
     "image": "https://ir-3.ozone.ru/s3/multimedia-1-s/wc300/8321661640.jpg",
     "priceWithoutDiscount": 6852,
     "priceWithDiscount": 2441,
@@ -10,7 +10,7 @@
     "hasDiscount": true
   },
   {
-    "id": "product_002",
+    "id": "2146403371",
     "image": "https://ir-3.ozone.ru/s3/multimedia-1-k/wc300/7096082888.jpg",
     "priceWithoutDiscount": 1567,
     "priceWithDiscount": 341,
@@ -20,7 +20,7 @@
     "hasDiscount": false
   },
   {
-    "id": "product_003",
+    "id": "2146403372",
     "image": "https://ir-3.ozone.ru/s3/multimedia-1-v/wc300/8398488811.jpg",
     "priceWithoutDiscount": 750,
     "priceWithDiscount": 145,
@@ -30,54 +30,54 @@
     "hasDiscount": true
   },
   {
-    "id": "product_004",
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa",
-    "priceWithoutDiscount": 12999,
-    "priceWithDiscount": 8999,
-    "desc": "Кроссовки Nike Air Max 270",
-    "rating": 4.7,
-    "countReview": 2341,
-    "hasDiscount": true
-  },
-  {
-    "id": "product_005",
-    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-    "priceWithoutDiscount": 8999,
-    "priceWithDiscount": 8999,
-    "desc": "Рюкзак спортивный Adidas",
-    "rating": 4.5,
-    "countReview": 567,
+    "id": "2146403373",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-3/wc300/7610047491.jpg",
+    "priceWithoutDiscount": 9157,
+    "priceWithDiscount": 9157,
+    "desc": "Дополнительный аккумулятор Konfulon 80000 mAh 22,5W",
+    "rating": 5.0,
+    "countReview": 8,
     "hasDiscount": false
   },
   {
-    "id": "product_006",
-    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e",
-    "priceWithoutDiscount": 15999,
-    "priceWithDiscount": 10999,
-    "desc": "Кофемашина De'Longhi Magnifica",
+    "id": "2146403374",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-u/wc300/7253843070.jpg",
+    "priceWithoutDiscount": 5000,
+    "priceWithDiscount": 402,
+    "desc": "Держатель для телефона автомобильный в машину",
     "rating": 4.8,
-    "countReview": 1789,
+    "countReview": 49233,
     "hasDiscount": true
   },
   {
-    "id": "product_007",
-    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
-    "priceWithoutDiscount": 1999,
-    "priceWithDiscount": 1499,
-    "desc": "Фотоаппарат моментальной печати Instax Mini",
-    "rating": 4.4,
-    "countReview": 456,
-    "hasDiscount": true
-  },
-  {
-    "id": "product_008",
-    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
-    "priceWithoutDiscount": 2499,
-    "priceWithDiscount": 2499,
-    "desc": "Очки солнцезащитные Ray-Ban",
+    "id": "2146403375",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-i/wc600/6337383738.jpg",
+    "priceWithoutDiscount": 68272,
+    "priceWithDiscount": 27348,
+    "desc": "Кухонный стол и 6 стульев, обеденная группа",
     "rating": 4.6,
-    "countReview": 1203,
-    "hasDiscount": false
+    "countReview": 213,
+    "hasDiscount": true
+  },
+  {
+    "id": "2146403376",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-6/wc300/7575895986.jpg",
+    "priceWithoutDiscount": 11006,
+    "priceWithDiscount": 3541,
+    "desc": "AOHi Magcube 2-портовый адаптер питания + AOHi Кабель",
+    "rating": 4.8,
+    "countReview": 9,
+    "hasDiscount": true
+  },
+  {
+    "id": "2146403377",
+    "image": "https://ir-3.ozone.ru/s3/multimedia-1-q/wc300/7886782862.jpg",
+    "priceWithoutDiscount": 2875,
+    "priceWithDiscount": 493,
+    "desc": "Зарядное устройство для телефона Hoco Зарядка USB",
+    "rating": 4.7,
+    "countReview": 301,
+    "hasDiscount": true
   },
   {
     "id": "product_009",

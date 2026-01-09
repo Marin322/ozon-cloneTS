@@ -1,4 +1,5 @@
-interface CatalogCardProps {
+export interface Product {
+  id: string;
   image: string;
   priceWithoutDiscount: number;
   priceWithDiscount: number;
@@ -8,7 +9,12 @@ interface CatalogCardProps {
   hasDiscount?: boolean;
 }
 
+interface CatalogCardProps extends Product {
+  onClick: (product: Product) => void;
+}
+
 function CatalogCard({
+  id,
   image,
   priceWithoutDiscount,
   priceWithDiscount,
@@ -16,12 +22,28 @@ function CatalogCard({
   rating,
   countReview,
   hasDiscount,
+  onClick
 }: CatalogCardProps) {
   let discount: number = Math.round(
     ((priceWithoutDiscount - priceWithDiscount) / priceWithoutDiscount) * 100
   );
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick({
+        id,
+        image,
+        priceWithoutDiscount,
+        priceWithDiscount,
+        desc,
+        rating,
+        countReview,
+        hasDiscount
+      });
+    }
+  };
   return (
-    <div className="w-65 h-100 rounded-xl cursor-pointer">
+    <div className="w-65 h-100 rounded-xl cursor-pointer" onClick={handleClick}>
       <img src={image} className="w-full h-80 rounded-xl" />
       <div className="grid grid-rows-3">
         <div className="flex gap-2 items-end">
