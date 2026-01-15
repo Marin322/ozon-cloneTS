@@ -1,7 +1,24 @@
 import SearchField from "../ui/SearchField";
 import MenuComponent from "../common/MenuComponents";
 import QuestionComponent from "../common/QuestionComponents";
-function Header() {
+
+interface props {
+  onClick: () => void;
+}
+
+function Header({ onClick }: props) {
+  const authDropContent = (
+    <div className="text-[14px]">
+      <p className="text-left">
+        Войдите, чтобы делать покупки, отслеживать заказы и пользоваться
+        персональными скидками и баллами. После входа вы сможете создать аккаунт
+        юрлица.
+      </p>
+      <button className="bg-accent-primary text-white font-bold w-full pb-2 pt-2 mt-2 rounded-[10px] cursor-pointer">Войти или зарегистрироваться</button>
+      <button className="bg-[#d3e7f0] hover:bg-[#d3e7ff] text-accent-primary font-bold w-full pb-2 pt-2 mt-4 rounded-[10px] cursor-pointer">Личный кабинет</button>
+    </div>
+  );
+
   let userIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +117,12 @@ function Header() {
         </button>
         <SearchField />
         <div className="grid grid-cols-4 gap-2">
-          <MenuComponent svgIcon={userIcon} name="Войти" />
+          <MenuComponent
+            svgIcon={userIcon}
+            onClick={onClick}
+            name="Войти"
+            dropdownComponent={authDropContent}
+          />
           <MenuComponent svgIcon={orderIcon} name="Заказы" />
           <MenuComponent svgIcon={favIcon} name="Избранное" />
           <MenuComponent svgIcon={cartIcon} name="Корзина" />
