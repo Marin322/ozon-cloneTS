@@ -1,6 +1,7 @@
 import Header from "../../components/layout/Header";
 import Catalog from "../../components/layout/Catalog";
 import { useState } from "react";
+import { AuthWindow } from "../../../features/auth/components";
 function MainPage() {
   const [authIsOpen, setAuthIsOpen] = useState(false);
 
@@ -13,13 +14,7 @@ function MainPage() {
       <Header onClick={authWindowOpen} />
       <Catalog />
       {authIsOpen && (
-        <>
-          <div onClick={authWindowOpen} className="fixed inset-0 flex justify-center bg-black opacity-50"></div>
-          
-          <div className="flex justify-center fixed z-50 pt-10 transition-all duration-200">
-            <div className="w-100 h-170 bg-background-primary rounded-4xl"></div>
-          </div>
-        </>
+        <AuthWindow isOpen={authIsOpen} onClose={() => setAuthIsOpen(false)}/>
       )}
     </div>
   );
