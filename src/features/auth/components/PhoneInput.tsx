@@ -1,10 +1,19 @@
 import { useState } from "react";
 import type { PhoneInputeProps } from "../types";
 export function PhoneInput({ value, onChange }: PhoneInputeProps) {
+  // const [rawPhone, setRawPhone] = useState("");
+  // const formatPhone = (rawPhone: string) => {
+  //   if (rawPhone != "") {
+  //     const match = rawPhone.match(/^(\d{3})(\d{3})(\d{2})(\d{2})?/);
+  //     if (match != null) {
+  //       console.log(`И чё ${match[1]}.${match[2]}.${match[3]}.${match[4]}`)
+  //     }
+  //   };
+  // };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const digits = e.target.value.replace(/\D/g, '');
-    onChange(digits);
+    const digits = e.target.value.replace(/\D/g, "");
+    onChange(`+7${digits}`);
   };
 
   return (
@@ -41,19 +50,23 @@ export function PhoneInput({ value, onChange }: PhoneInputeProps) {
       </div>
       <div className="grid grid-rows-[auto_1fr] relative">
         {/* Верхний блок - плавающий placeholder */}
-        <div className="px-3 pt-1 transition-all duration-200">
-        </div>
-        
+        <div className="px-3 pt-1 transition-all duration-200"></div>
+
         {/* Нижний блок - инпут */}
         <div className="w-full h-full">
           <input
             type="tel"
+            inputMode="numeric"
+            pattern="[0-9]"
             onChange={handleChange}
             placeholder="999 999 99 99"
             className="w-full h-full bg-transparent px-3
               focus:outline-none text-lg
               placeholder:text-gray-400"
-            maxLength={18} // для форматированного номера
+            maxLength={10}
+            onInput={(e) =>
+              (e.currentTarget.value = e.currentTarget.value.replace(/\D/g, ""))
+            }
           />
         </div>
       </div>

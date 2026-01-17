@@ -14,7 +14,7 @@ function Header({ onClick }: props) {
         персональными скидками и баллами. После входа вы сможете создать аккаунт
         юрлица.
       </p>
-      <button className="bg-accent-primary text-white font-bold w-full pb-2 pt-2 mt-2 rounded-[10px] cursor-pointer">Войти или зарегистрироваться</button>
+      <button onClick={onClick} className="bg-accent-primary text-white font-bold w-full pb-2 pt-2 mt-2 rounded-[10px] cursor-pointer">Войти или зарегистрироваться</button>
       <button className="bg-[#d3e7f0] hover:bg-[#d3e7ff] text-accent-primary font-bold w-full pb-2 pt-2 mt-4 rounded-[10px] cursor-pointer">Личный кабинет</button>
     </div>
   );
