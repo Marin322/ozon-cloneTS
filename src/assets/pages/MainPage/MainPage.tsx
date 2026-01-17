@@ -14,7 +14,7 @@ function MainPage() {
       <Header onClick={authWindowOpen} />
       <Catalog />
       {authIsOpen && (
-        <AuthWindow isOpen={authIsOpen} onClose={() => setAuthIsOpen(false)}/>
+        <AuthWindow onClose={() => setAuthIsOpen(false)}/>
       )}
     </div>
   );

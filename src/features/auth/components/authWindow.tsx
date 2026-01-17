@@ -1,25 +1,33 @@
 import { useEffect, useState } from "react";
-import type { AuthWindowProps } from "../types";
+import type { AuthWindowProps, RegisterRequest, LoginRequest } from "../types";
 import { PhoneInput, LoginWithServiceButton } from "./index";
 import { authApi } from "../api";
-import type { LoginRequest } from "../types";
-export function AuthWindow({ isOpen, onClose }: AuthWindowProps) {
+export function AuthWindow({ onClose }: AuthWindowProps) {
   const [phone, setPhone] = useState("+7");
 
-  const AuthorizeAccount = () => {
+  const AuthorizeAccount = async () => {
     try {
       const LoginRequestData: LoginRequest = {
+        phoneNumber: phone,
+      };
+      const result = await authApi.login(LoginRequestData);
+      console.log(result.id);
+    } catch {}
+  };
+
+  const RegisterAccount = async () => {
+    try {
+      const RegisterRequestData: RegisterRequest = {
         phoneNumber: phone
       };
-      const result = authApi.login(LoginRequestData);
-      console.log(result)
-    }
-    catch {}
+      const result = await authApi.register(RegisterRequestData);
+      console.log(result);
+    } catch {}
   };
 
   useEffect(() => {
-    console.log(phone)
-  }, [phone])
+    console.log(phone);
+  }, [phone]);
 
   return (
     <>
@@ -29,7 +37,7 @@ export function AuthWindow({ isOpen, onClose }: AuthWindowProps) {
       ></div>
 
       <div className="flex justify-center fixed z-50 pt-10 transition-all duration-200">
-        <div className="w-110 h-170 bg-background-secondary rounded-4xl grid grid-rows-[60px_70px_auto_auto_auto_auto_auto_auto_auto] pl-6 pr-6">
+        <div className="w-110 h-170 bg-background-secondary rounded-4xl grid grid-rows-[70px_70px_100px_120px_80px_10px_120px_120px_10px] pl-6 pr-6">
           <div className="grid grid-cols-2">
             <div className="flex items-end">
               <img
@@ -63,12 +71,15 @@ export function AuthWindow({ isOpen, onClose }: AuthWindowProps) {
             <PhoneInput value={phone} onChange={setPhone} />
           </div>
           <div className="w-full -mt-6.25">
-            <button onClick={AuthorizeAccount} className="bg-accent-primary text-text-secondary rounded-2xl font-bold p-4 text-[18px] w-full cursor-pointer">
+            <button
+              onClick={AuthorizeAccount}
+              className="bg-accent-primary text-text-secondary rounded-2xl font-bold p-4 text-[18px] w-full cursor-pointer"
+            >
               Войти
             </button>
           </div>
           <div className="-mt-8.25 text-gray-400">------ или ------</div>
-          <div className="flex">
+          <div className="flex gap-4 flex-col">
             <div className="w-full h-1/2">
               <LoginWithServiceButton
                 text="Войти с VK ID"
@@ -119,6 +130,10 @@ export function AuthWindow({ isOpen, onClose }: AuthWindowProps) {
                 }
               />
             </div>
+          </div>
+          <div className="flex flex-col mt-4 gap-3 text-[16px] text-accent-primary font-bold">
+            <a href="">Войти по почте</a>
+            <a href="">Не могу войти</a>
           </div>
         </div>
       </div>
