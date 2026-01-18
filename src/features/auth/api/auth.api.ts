@@ -1,4 +1,4 @@
-import type { LoginRequest, RegisterRequest, LoginResponse } from "../types";
+import type { LoginRequest, RegisterRequest, LoginResponse, VerifyRequest } from "../types";
 import { endPoints } from "../../../endpoints";
 
 export const authApi = {
@@ -7,7 +7,7 @@ export const authApi = {
      * @async
      * @function login
      * @param {LoginRequest} data - Login details (phone number)
-     * @returns {Promise<LoginResponse>}  Object with user ID
+     * @returns {Promise<LoginResponse>}  Object with code
      */
     login: async (data: LoginRequest): Promise<LoginResponse> => {
         const response = await fetch(`${endPoints.BaseUrl}${endPoints.auth.login}`, {
@@ -17,7 +17,7 @@ export const authApi = {
                 },
                 body: JSON.stringify(data)
         });
-        return response.json();
+        return await response.json();
     },
 
     /**
@@ -28,6 +28,22 @@ export const authApi = {
      */
     register: async (data: RegisterRequest) => {
         const response = await fetch(`${endPoints.BaseUrl}${endPoints.auth.register}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        return response.json();
+    },
+
+    /**
+     * Verifies the confirmation code for authorization
+     * @param data Data for verification (phone number and confirmation code)
+     * @returns User ID
+     */
+    verify: async (data: VerifyRequest) => {
+        const response = await fetch(`${endPoints.BaseUrl}${endPoints.auth.verify}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

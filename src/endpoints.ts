@@ -3,6 +3,7 @@ export const endPoints = {
 
     auth: {
         login: 'api/auth/authorization',
-        register: 'api/auth/register'
+        register: 'api/auth/register',
+        verify: 'api/auth/verify'
     },
 }

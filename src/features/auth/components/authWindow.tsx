@@ -1,33 +1,43 @@
-import { useEffect, useState } from "react";
-import type { AuthWindowProps, RegisterRequest, LoginRequest } from "../types";
+import { useState } from "react";
+import type { AuthWindowProps, LoginRequest, RegisterWithVerify } from "../types";
 import { PhoneInput, LoginWithServiceButton } from "./index";
 import { authApi } from "../api";
 export function AuthWindow({ onClose }: AuthWindowProps) {
   const [phone, setPhone] = useState("+7");
-
+  const [verifyWindowIsOpen, setVerifyWindowIsOpen] = useState(false);
+  const [correctCode, setCorrectCode] = useState<string>('');
+  const [inputCode, setInputCode] = useState<string>('');
   const AuthorizeAccount = async () => {
     try {
       const LoginRequestData: LoginRequest = {
         phoneNumber: phone,
       };
       const result = await authApi.login(LoginRequestData);
-      console.log(result.id);
+      setCorrectCode(result.authCode);
+      changeVerifyWindowState();
     } catch {}
   };
 
-  const RegisterAccount = async () => {
+  const VerifyAccount = async () => {
     try {
-      const RegisterRequestData: RegisterRequest = {
-        phoneNumber: phone
+      const RegisterWithVerifyData: RegisterWithVerify = {
+        phoneNumber: phone,
+        code: inputCode
       };
-      const result = await authApi.register(RegisterRequestData);
-      console.log(result);
-    } catch {}
+      const result = await authApi.verify(RegisterWithVerifyData);
+      localStorage.setItem('userId', result.id);
+      changeVerifyWindowState();
+    }
+    catch {}
   };
 
-  useEffect(() => {
-    console.log(phone);
-  }, [phone]);
+  const changeVerifyWindowState = () => {
+    setVerifyWindowIsOpen((prev) => !prev);
+  };
+
+  const onChangeCode = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputCode(e.target.value);
+  };
 
   return (
     <>
@@ -136,6 +146,19 @@ export function AuthWindow({ onClose }: AuthWindowProps) {
             <a href="">Не могу войти</a>
           </div>
         </div>
+        {verifyWindowIsOpen && (
+          <div className="fixed w-full h-full flex z-51 items-start justify-center">
+            <div className="w-full h-full mt-0 bg-black opacity-35" onClick={changeVerifyWindowState}></div>
+            <div className="w-100 h-65 bg-background-secondary fixed mt-50 rounded-2xl p-2">
+              <p className="font-bold text-3xl">{correctCode}</p>
+              <p className="text-left">В случае, если вы не регистрировались до этого при вводе кода будет зарегистрирован новый аккаунт</p>
+              <div className="w-full h-14 bg-background-primary mt-4 rounded-2xl">
+                <input className="w-full h-full rounded-2xl focus:outline-none p-4 text-center text-2xl" value={inputCode} onChange={onChangeCode} maxLength={4}/>
+              </div>
+              <button className="w-full h-10 bg-accent-primary text-text-secondary mt-4 rounded-2xl cursor-pointer" onClick={VerifyAccount}>Продолжить</button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
