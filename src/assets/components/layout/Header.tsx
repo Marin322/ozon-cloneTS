@@ -1,12 +1,22 @@
 import SearchField from "../ui/SearchField";
 import MenuComponent from "../common/MenuComponents";
 import QuestionComponent from "../common/QuestionComponents";
+import type { UserData } from "../../../features/user/types";
 
 interface props {
   onClick: () => void;
-}
+  isAuth: boolean;
+};
 
-function Header({ onClick }: props) {
+function Header({ onClick, isAuth }: props) {
+  let userData = localStorage.getItem('userData');
+  let newUserData: UserData | null = null;
+  if (userData) {
+    newUserData = JSON.parse(userData);
+  };
+  if (!userData) {
+    return
+  }
   const authDropContent = (
     <div className="text-[14px]">
       <p className="text-left">
@@ -121,6 +131,8 @@ function Header({ onClick }: props) {
             svgIcon={userIcon}
             onClick={onClick}
             name="Войти"
+            isAuth={isAuth}
+            lastname={newUserData?.phoneNumber}
             dropdownComponent={authDropContent}
           />
           <MenuComponent svgIcon={orderIcon} name="Заказы" />

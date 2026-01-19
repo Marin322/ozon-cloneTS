@@ -25,7 +25,8 @@ export function AuthWindow({ onClose }: AuthWindowProps) {
         code: inputCode
       };
       const result = await authApi.verify(RegisterWithVerifyData);
-      localStorage.setItem('userId', result.id);
+      console.log(result)
+      localStorage.setItem('userId', result);
       changeVerifyWindowState();
     }
     catch {}

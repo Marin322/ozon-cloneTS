@@ -1,5 +1,4 @@
 export interface AuthWindowProps {
-    // isOpen: boolean;
     onClose: () => void;
 };
 

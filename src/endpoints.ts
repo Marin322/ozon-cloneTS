@@ -6,4 +6,7 @@ export const endPoints = {
         register: 'api/auth/register',
         verify: 'api/auth/verify'
     },
+    user: {
+        userData: 'api/user'
+    }
 }
