@@ -9,7 +9,7 @@ interface props {
 };
 
 function Header({ onClick, isAuth }: props) {
-  let userData = localStorage.getItem('userData');
+  const userData = localStorage.getItem('userData');
   let newUserData: UserData | null = null;
   if (userData) {
     newUserData = JSON.parse(userData);
