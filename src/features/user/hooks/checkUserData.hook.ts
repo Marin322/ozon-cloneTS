@@ -12,6 +12,9 @@ export const useUserData = () => {
     }, []);
 
     useEffect(() => {
-        checkAndLoadUserData()
+        const userId = localStorage.getItem('userId');
+        if (userId) {
+            checkAndLoadUserData();
+        };
     }, [checkAndLoadUserData]);
 }

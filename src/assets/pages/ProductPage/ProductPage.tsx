@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import Header from "../../components/layout/Header";
 import { useEffect, useState } from "react";
 import productsData from "../../../products.json";
 import type { Product } from "../../components/common/CatalogCard";
@@ -24,7 +23,6 @@ function ProductPage() {
   if (!product) {
     return (
       <div>
-        <Header />
         <div>Товар не найден</div>
       </div>
     );
@@ -32,7 +30,6 @@ function ProductPage() {
 
   return (
     <div className="bg-background-secondary">
-      <Header />
       <div className="grid grid-rows-2">
         <div className="grid grid-cols-2 text-gray-600 p-2">
           <div className="flex justify-start cursor-pointer">

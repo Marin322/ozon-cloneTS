@@ -4,8 +4,8 @@ import QuestionComponent from "../common/QuestionComponents";
 import type { UserData } from "../../../features/user/types";
 
 interface props {
-  onClick: () => void;
-  isAuth: boolean;
+  onClick?: () => void;
+  isAuth?: boolean;
 };
 
 function Header({ onClick, isAuth }: props) {
@@ -15,7 +15,6 @@ function Header({ onClick, isAuth }: props) {
     newUserData = JSON.parse(userData);
   };
   if (!userData) {
-    return
   }
   const authDropContent = (
     <div className="text-[14px]">

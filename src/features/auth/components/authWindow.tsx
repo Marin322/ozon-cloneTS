@@ -47,7 +47,7 @@ export function AuthWindow({ onClose }: AuthWindowProps) {
         className="fixed inset-0 flex justify-center bg-black opacity-50"
       ></div>
 
-      <div className="flex justify-center fixed z-50 pt-10 transition-all duration-200">
+      <div className="flex justify-center fixed z-50 transition-all duration-200">
         <div className="w-110 h-170 bg-background-secondary rounded-4xl grid grid-rows-[70px_70px_100px_120px_80px_10px_120px_120px_10px] pl-6 pr-6">
           <div className="grid grid-cols-2">
             <div className="flex items-end">
